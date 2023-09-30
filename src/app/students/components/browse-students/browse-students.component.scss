@@ -1,0 +1,12 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+
+table {
+    max-width: 800px;
+    padding: 0 0.5em;
+}

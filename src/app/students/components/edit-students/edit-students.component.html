@@ -1,0 +1,31 @@
+<h1 class="form-title">Inscrire un nouvel élève :</h1>
+<form [formGroup]="studentForm" (ngSubmit)="submit()">
+    <mat-form-field>
+        <mat-label>Prénom</mat-label>
+        <input matInput placeholder="ex. Pierre" formControlName="firstName"/>
+        <mat-error>Ce champ est requis.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="ex. Caillou" formControlName="lastName"/>
+        <mat-error>Ce champ est requis.</mat-error>
+    </mat-form-field>
+    <button class="add-button" mat-flat-button color="primary">Inscrire</button>
+</form>
+<mat-paginator [pageSizeOptions]="[5,10,20,50]" [pageSize]="50"></mat-paginator>
+<table mat-table [dataSource]="dataSource">
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>Prénom</th>
+        <td mat-cell *matCellDef="let student">{{student.firstName | titlecase}}</td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Nom</th>
+        <td mat-cell *matCellDef="let student">{{student.lastName | uppercase}}</td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>Virer</th>
+        <td mat-cell *matCellDef="let student"><button class="delete" (click)="remove(student)">❌</button></td>
+    </ng-container>
+</table>

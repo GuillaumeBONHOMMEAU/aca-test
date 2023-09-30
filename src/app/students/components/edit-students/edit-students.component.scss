@@ -1,0 +1,40 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+
+.form-title {
+    text-align: center;
+    margin: 0;
+}
+
+button.delete {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    .add-button {
+        height: 4em;
+    }
+}
+
+.mat-column-delete {
+    width: 1px;
+}
+
+td.mat-column-delete {
+    text-align: center;
+}
+
+table {
+    max-width: 800px;
+    padding: 0 0.5em;
+}
